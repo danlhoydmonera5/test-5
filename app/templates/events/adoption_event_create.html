@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Create Adoption Event</h1>
+  <form action="{% url 'adoption_event_create' %}" method="POST">
+    {% csrf_token %}
+
+    <div>
+      <label for="id_name">Event Name:</label>
+      <input type="text" id="id_name" name="name" placeholder="Events" required>
+    </div>
+
+    <div>
+      <label for="id_description">Description:</label>
+      <textarea id="id_description" name="description" placeholder="Description" required></textarea>
+    </div>
+
+    <div>
+      <label for="id_location">Location:</label>
+      <input type="text" id="id_location" name="location" placeholder="Location" required>
+    </div>
+
+    <div>
+      <label for="id_event_date">Event Date:</label>
+      <input type="date" id="id_event_date" name="event_date" required value="{{ form.event_date.value }}">
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Create Event</button>
+    </div>
+  </form>
+
+  <a href="{% url 'adoption_event_list' %}" class="btn btn-secondary mt-3">Back to Events List</a>
+{% endblock content %}

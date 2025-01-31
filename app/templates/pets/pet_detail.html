@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>{{ pet.name }} ({{ pet.species }})</h1>
+  <img src="{{ pet.photo.url }}" alt="{{ pet.name }}" class="img-fluid" style="max-width: 300px;">
+  <p><strong>Age:</strong> {{ pet.age }} years</p>
+  <p><strong>Gender:</strong> {{ pet.get_gender_display }}</p>
+  <p><strong>Breed:</strong> {{ pet.breed }}</p>
+  <p><strong>Status:</strong> {{ pet.get_status_display }}</p>
+  <p><strong>Description:</strong> {{ pet.description }}</p>
+
+ {% if authenticate.is_staff %}
+  <a href="{% url 'pet_update' pet.pk %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'pet_delete' pet.pk %}" class="btn btn-danger">Delete</a>
+ {% endif %}
+  <a href="{% url 'pet_list' %}" class="btn btn-secondary">Back to Pet List</a>
+{% endblock content %}

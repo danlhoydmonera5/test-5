@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>{{ event.name }} - Details</h1>
+  <p><strong>Organizer:</strong> {{ event.organizer.username }}</p>
+  <p><strong>Location:</strong> {{ event.location }}</p>
+  <p><strong>Date:</strong> {{ event.event_date|date:"F j, Y" }}</p>
+  <p><strong>Description:</strong> {{ event.description }}</p>
+
+  {% if authenticate.is_staff %}
+  <a href="{% url 'adoption_event_update' event.pk %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'adoption_event_delete' event.pk %}" class="btn btn-danger">Delete</a>
+  {% endif %}
+  <a href="{% url 'adoption_event_list' %}" class="btn btn-secondary">Back to Events List</a>
+
+{% endblock content %}

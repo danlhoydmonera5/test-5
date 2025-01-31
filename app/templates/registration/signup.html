@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="register-container">
+  <h2 class="register-title">🐾 Join Our Pet-Loving Family! 🐾</h2>
+  <p class="register-subtitle">Create an account and find your new furry friend today! 🐶🐱</p>
+
+  <!-- Display form errors -->
+  {% if form.errors %}
+    <div class="register-alert">
+      <ul>
+        {% for field, errors in form.errors.items %}
+          {% for error in errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data" class="register-form">
+    {% csrf_token %}
+
+    <div class="input-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="input-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="text" id="phone_number" name="phone_number">
+    </div>
+
+    <div class="input-group">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address"></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="profile_picture">Profile Picture:</label>
+      <input type="file" id="profile_picture" name="profile_picture">
+    </div>
+
+    <div class="input-group">
+      <label for="password1">Password:</label>
+      <input type="password" id="password1" name="password1" required>
+    </div>
+
+    <div class="input-group">
+      <label for="password2">Confirm Password:</label>
+      <input type="password" id="password2" name="password2" required>
+    </div>
+
+    <button type="submit" class="register-btn">🐾 Register Now 🐾</button>
+  </form>
+</div>
+{% endblock content %}
+

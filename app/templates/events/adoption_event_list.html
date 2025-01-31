@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Adoption Events</h1>
+  {% if request.user.is_staff %}
+    <a href="{% url 'adoption_event_create' %}" class="btn btn-primary">Add New Event</a>
+  {% endif %}
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>View</th>
+        {% if request.user.is_staff %}
+          <th>Edit</th>
+          <th>Delete</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events %}
+        <tr>
+          <td>{{ event.name }}</td>
+          <td>{{ event.location }}</td>
+          <td>{{ event.event_date|date:"F j, Y" }}</td>
+          <td>
+            <a href="{% url 'adoption_event_detail' event.pk %}" class="btn btn-info">View</a>
+          </td>
+          {% if request.user.is_staff %}
+            <td>
+              <a href="{% url 'adoption_event_update' event.pk %}" class="btn btn-warning">Edit</a>
+            </td>
+            <td>
+              <a href="{% url 'adoption_event_delete' event.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

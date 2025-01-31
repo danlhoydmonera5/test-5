@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Update Adoption Application</h1>
+  <form action="{% url 'adoption_application-update' application.pk %}" method="POST">
+    {% csrf_token %}
+
+    <div>
+      <label for="id_pet">Pet:</label>
+      <select id="id_pet" name="pet" required>
+        {% for pet in form.pet.field.queryset %}
+          <option value="{{ pet.id }}" {% if pet.id == form.pet.value %}selected{% endif %}>{{ pet.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label for="id_reason_for_adoption">Reason for Adoption:</label>
+      <textarea id="id_reason_for_adoption" name="reason_for_adoption" required>{{ form.reason_for_adoption.value }}</textarea>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Submit Application</button>
+    </div>
+  </form>
+
+  <a href="{% url 'adoption_application_list' %}" class="btn btn-secondary mt-3">Back to Applications List</a>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Adoption Applications</h1>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Applicant</th>
+        <th>Pet</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for application in applications %}
+        <tr>
+          <td>{{ application.applicant.username }}</td>
+          <td>{{ application.pet.name }}</td>
+          <td>{{ application.get_status_display }}</td>
+          <td>
+            <a href="{% url 'adoption_application_detail' application.pk %}" class="btn btn-info">View</a>
+            <a href="{% url 'adoption_application_update' application.pk %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'adoption_application_delete' application.pk %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

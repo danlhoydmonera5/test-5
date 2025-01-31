@@ -1,0 +1,288 @@
+
+/* home */
+
+
+.pet-adoption-home {
+    text-align: center;
+    padding: 50px;
+    color: hsl(0, 0%, 0%);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(243, 120, 5, 0.2);
+    background: linear-gradient(135deg, #ffebcc, #ffe0b2);
+}
+
+
+ .background {
+        padding-left: 450px;
+        padding-top: 10px;
+        height: 50vh;
+        width: 53vw;
+}
+
+
+.title {
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #5c3d2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    background: #fff3e0;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    
+}
+
+
+
+/* about design */
+
+.about-pet-adoption {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffebcc, #ffe0b2);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.about-title {
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #5c3d2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    font-size: 1.2rem;
+    color: #7a5c58;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.about-pet-adoption::after {
+    content: "🐾";
+    display: block;
+    font-size: 3rem;
+    margin-top: 15px;
+    color: #d4a373;
+}
+
+
+/* contact design */
+
+.contact-container {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff3e0;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+    border: 4px solid #ffcc80;
+    position: relative;
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #5c3d2e;
+    margin-bottom: 10px;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    color: #7a5c58;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #5c3d2e;
+    font-weight: bold;
+}
+
+.contact-container::after {
+    content: "🐾";
+    display: block;
+    font-size: 3rem;
+    margin-top: 15px;
+    color: #d4a373;
+}
+
+
+
+
+
+
+/* log in design */
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffecd1;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+}
+
+.login-title {
+    font-size: 1.9rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #5c3d2e;
+}
+
+.login-subtitle {
+    font-size: .9rem;
+    color: #7a5c58;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5c3d2e;
+}
+
+.input-group input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #d4a373;
+    border-radius: 8px;
+    background: #fff9f0;
+}
+
+.login-btn {
+    background: #d4a373;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: #bb8f5b;
+}
+
+
+/* sign up design */
+
+.register-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #ffefd5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.register-title {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #5c3d2e;
+}
+
+.register-subtitle {
+    font-size: 1rem;
+    color: #7a5c58;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.register-alert {
+    background: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #5c3d2e;
+}
+
+.input-group input, .input-group textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #d4a373;
+    border-radius: 8px;
+    background: #fff9f0;
+}
+
+.register-btn {
+    background: #d4a373;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    background: #bb8f5b;
+}
+
+.register-container::after {
+    content: "🐾";
+    display: block;
+    font-size: 3rem;
+    margin-top: 15px;
+}
+
+/* pet_list design */
+

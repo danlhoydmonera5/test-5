@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Pets</h1>
+  {% if request.user.is_staff %}
+    <a href="{% url 'pet_create' %}" class="btn btn-primary">Add New Pet</a>
+  {% endif %}
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Status</th>
+        <th>View</th>
+        {% if not request.user.is_staff %}
+          <th>Apply</th>
+        {% endif %}
+        {% if request.user.is_staff %}
+          <th>Update</th>
+          <th>Delete</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for pet in pets %}
+        <tr>
+          <td>{{ pet.name }}</td>
+          <td>{{ pet.species }}</td>
+          <td>{{ pet.get_status_display }}</td>
+          <td>
+            <a href="{% url 'pet_detail' pet.pk %}" class="btn btn-info">View</a>
+          </td>
+          {% if not request.user.is_staff %}
+            <td>
+              <a href="{% url 'adoption_application_create' %}?pet_id={{ pet.pk }}" class="btn btn-success">Apply for Adoption</a>
+            </td>
+          {% endif %}
+          {% if request.user.is_staff %}
+            <td>
+              <a href="{% url 'pet_update' pet.pk %}" class="btn btn-warning">Edit</a>
+            </td>
+            <td>
+              <a href="{% url 'pet_delete' pet.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

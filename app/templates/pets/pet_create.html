@@ -1,0 +1,55 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h1>Add a New Pet</h1>
+  <form action="{% url 'pet_create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div>
+      <label for="id_name">Pet Name:</label>
+      <input type="text" id="id_name" name="name"  placeholder="Pet Name" required>
+    </div>
+
+    <div>
+      <label for="id_species">Species:</label>
+      <input type="text" id="id_species" name="species" placeholder="Dog" required>
+    </div>
+
+    <div>
+      <label for="id_breed">Breed:</label>
+      <input type="text" id="id_breed" name="breed" placeholder="Dalmatian" required>
+    </div>
+
+    <div>
+      <label for="id_age">Age:</label>
+      <input type="number" id="id_age" name="age"  placeholder="10" required>
+    </div>
+
+    <div>
+      <label for="id_gender">Gender:</label>
+      <input type="text" id="id_gender" name="gender"  placeholder="Male" required>
+    </div>
+
+    <div>
+      <label for="id_description">Description:</label>
+      <textarea id="id_description" name="description" placeholder="A Cute pet" required></textarea>
+    </div>
+
+    <div>
+      <label for="id_photo">Pet Photo:</label>
+      <input type="file" id="id_photo" name="photo" accept="image/*">
+    </div>
+
+    <div>
+      <label for="id_status">Status:</label>
+      <input type="text" id="id_status" name="status" required value="{{ form.status.value }}" readonly>
+
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Save Pet</button>
+    </div>
+  </form>
+
+  <a href="{% url 'pet_list' %}" class="btn btn-secondary mt-3">Back to Pet List</a>
+{% endblock content %}
